@@ -1,4 +1,5 @@
 # pip install streamlit
+# pip install numpy
 # pip install pandas
 # pip install -U scikit-learn
 # pip install joblib
@@ -8,7 +9,6 @@
 import streamlit as st
 import joblib
 from typing import Tuple
-import requests
 import pandas as pd
 
 LOCAL_MODEL = "Local"
