@@ -3,6 +3,7 @@
 # pip install requests
 # pip install -U scikit-learn
 # pip install joblib
+# needs random_forest_model.pkl
 # streamlit run streamlit_app.py
 
 import streamlit as st
