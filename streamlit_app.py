@@ -1,6 +1,5 @@
 # pip install streamlit
 # pip install pandas
-# pip install requests
 # pip install -U scikit-learn
 # pip install joblib
 # needs random_forest_model.pkl
@@ -10,7 +9,7 @@ import streamlit as st
 import joblib
 from typing import Tuple
 import requests
-# import pandas as pd
+import pandas as pd
 
 LOCAL_MODEL = "Local"
 REST_API_MODEL = "REST API"
@@ -108,12 +107,10 @@ def model_predict(
                 never_smoked_input
             ],
         }
-        # df = pd.DataFrame(data=d)
-        # print(df)
-        # print(rf_model)
-        # model_pred = rf_model.predict(
-        #    df
-        # ).item(0)
+        df = pd.DataFrame(data=d)
+        model_pred = rf_model.predict(
+            df
+        ).item(0)
 
     if model_pred == 1:
         return "Diabetic"
