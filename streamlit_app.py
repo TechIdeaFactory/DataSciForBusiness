@@ -2,6 +2,7 @@
 # pip install pandas
 # pip install requests
 # pip install -U scikit-learn
+# pip install joblib
 # streamlit run streamlit_app.py
 
 import streamlit as st
