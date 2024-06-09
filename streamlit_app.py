@@ -1,5 +1,6 @@
 # pip install streamlit
 # pip install pandas
+# pip install numpy
 # pip install -U scikit-learn
 # pip install joblib
 # needs random_forest_model.pkl
