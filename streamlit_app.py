@@ -1,5 +1,4 @@
 # pip install streamlit
-# pip install numpy
 # pip install pandas
 # pip install -U scikit-learn
 # pip install joblib
@@ -9,6 +8,7 @@
 import streamlit as st
 import joblib
 from typing import Tuple
+import requests
 import pandas as pd
 
 LOCAL_MODEL = "Local"
@@ -67,11 +67,11 @@ def format_model_inputs(
 # Predict using
 # model and inputs
 def model_predict(
-    model: str,
-    bmi: int,
-    hbA1c: float,
-    current_smoker: str,
-    ever_smoked: str,
+        model: str,
+        bmi: int,
+        hbA1c: float,
+        current_smoker: str,
+        ever_smoked: str,
 ) -> str:
 
     (
@@ -107,10 +107,12 @@ def model_predict(
                 never_smoked_input
             ],
         }
-        df = pd.DataFrame(data=d)
-        model_pred = rf_model.predict(
-            df
-        ).item(0)
+    df = pd.DataFrame(data=d)
+    # print(df)
+    # print(rf_model)
+    model_pred = rf_model.predict(
+        df
+    ).item(0)
 
     if model_pred == 1:
         return "Diabetic"
